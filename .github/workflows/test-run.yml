@@ -1,0 +1,9 @@
+name: test-run
+on:
+  workflow-dispatch:
+jobs:
+  - name: Set Zip filename variable
+    id: zipname
+    run: |
+      COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-8)
+      echo $COMMIT_HASH
