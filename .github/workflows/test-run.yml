@@ -2,10 +2,11 @@ name: test-run
 on:
   workflow_dispatch:
 jobs:
-  runs-on: ubuntu-22.04
-  steps:
-    - name: Set Zip filename variable
-      id: zipname
-      run: |
-        COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-8)
-        echo $COMMIT_HASH
+  test-env:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Set Zip filename variable
+        id: zipname
+        run: |
+          COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-8)
+          echo $COMMIT_HASH
